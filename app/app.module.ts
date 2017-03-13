@@ -14,6 +14,7 @@ import { EventService } from './events/shared/event.service'
 import { ToastrService } from './common/toastr.service'
 import { EventRouteActivator } from './events/event-details/event-route-activator.service'
 import { EventsListResolver } from './events/events-list-resolver.service'
+import { AuthService } from './user/auth.service'
 
 import { appRoutes } from './routes'
 
@@ -39,7 +40,8 @@ import { appRoutes } from './routes'
             provide: 'canDeactivateCreateEvent',
             useValue: checkDirtyState
         },
-        EventsListResolver]
+        EventsListResolver,
+        AuthService]
 })
 export class AppModule { }
 
